@@ -16,6 +16,7 @@ def is_git_repo(path: str) -> bool:
     try:
         output = run_git_command(path, ["rev-parse", "--is-inside-work-tree"])
         return output == "true"
+    
     except RuntimeError:
         return False
     
